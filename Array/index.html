@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width = , initial-scale=1.0">
+        <title> Esempio Array </title>
+    </head>
+    <body>
+        <script>
+            let items = [ ];
+
+            function inputToArray() 
+            {
+                let str = " ";
+                let boxvalue = " ";
+                boxvalue = document.getElementById('box').value;
+                items.push(boxvalue);
+                console.log(items);
+                str = str + ", " + boxvalue;
+                document.getElementById('out').innerHTML=items;
+                return false;
+            }
+
+            function printArray()
+            {
+                let str = " "; 
+                for(let i = 0; i<items.length; i++)
+                {
+                    str = str + " " + items[i].value;
+                }
+                return str;
+            }
+        </script>
+
+        <form onsubmit = "return inputToArray()">
+            <p> Inserisci parola </p>
+            <input type = "text" id = "box">
+            <input type = "submit" value = "Submit">
+        </form>
+
+        <p id = "out"> </p>
+    </body>
+</html>
